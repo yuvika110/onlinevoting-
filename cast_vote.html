@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast Your Vote</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Cast Your Vote</h1>
+
+    <form id="voteForm">
+        <label for="candidate">Select Candidate:</label>
+        <select id="candidate" required>
+            <option value="" disabled selected>Choose a candidate</option>
+            <option value="1">Yuvika</option>
+            <option value="2">Jasmine</option>
+            <option value="3">Preksha</option>
+            <option value="4">Monisha</option>
+        </select><br>
+
+        <button type="submit">Vote</button>
+    </form>
+
+    <h2>Current Vote Counts</h2>
+    <ul id="voteCounts">
+        <li>Yuvika: <span id="votes-yuvika">0</span></li>
+        <li>Jasmine: <span id="votes-jasmine">0</span></li>
+        <li>Preksha: <span id="votes-preksha">0</span></li>
+        <li>Monisha: <span id="votes-monisha">0</span></li>
+    </ul>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

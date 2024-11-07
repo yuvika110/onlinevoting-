@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voter Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var adhar = document.getElementById("adhar").value;
+            var password = document.getElementById("password").value;
+
+            if (name == "" || email == "" || adhar == "" || password == "") {
+                alert("Please fill all fields.");
+                return false;
+            }
+
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert("Invalid email address.");
+                return false;
+            }
+
+            if (adhar.length != 12) {
+                alert("Aadhaar number must be 12 digits.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Voter Registration</h1>
+    <form action="register.php" method="post" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="adhar">Aadhaar Number:</label>
+        <input type="text" id="adhar" name="adhar" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>
